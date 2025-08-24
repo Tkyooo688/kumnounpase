@@ -104,49 +104,16 @@
   </style>
 </head>
 <body>
-  <!-- Pre-entry overlay -->
-  <div id="preentry" role="dialog" aria-modal="true" aria-labelledby="preentry-title">
-    <div class="card" role="form">
-      <h1 id="preentry-title">กรุณากรอกข้อมูลก่อนเข้าหน้าเว็บไซต์</h1>
-      <ol class="fields-list">
-        <li>
-          <label for="pe-firstName">ชื่อ</label>
-          <input id="pe-firstName" name="firstName" type="text" placeholder="ชื่อ" required />
-        </li>
-        <li>
-          <label for="pe-lastName">นามสกุล</label>
-          <input id="pe-lastName" name="lastName" type="text" placeholder="นามสกุล" required />
-        </li>
-        <li>
-          <label for="pe-age">อายุ</label>
-          <input id="pe-age" name="age" type="number" min="0" placeholder="อายุ" required />
-        </li>
-        <li>
-          <label for="pe-occupation">อาชีพ</label>
-          <input id="pe-occupation" name="occupation" type="text" placeholder="อาชีพ" required />
-        </li>
-        <li>
-          <label for="pe-income">รายได้ (บาท/เดือน)</label>
-          <input id="pe-income" name="income" type="number" min="0" step="0.01" placeholder="รายได้ต่อเดือน" required />
-        </li>
-      </ol>
-
-      <div class="actions">
-        <button id="enterBtn" type="button" disabled>เริ่มต้น</button>
-      </div>
-      <p class="hint">ข้อมูลใช้เพื่อปรับประสบการณ์ (เก็บไว้ในเครื่อง ไม่เผยแพร่)</p>
-    </div>
-  </div>
-
+  <!-- ลบ Pre-entry overlay ทั้งหมดออก -->
+  <!-- make first heading focusable so script can move focus there -->
   <header>
     <h1>เว็บไซต์คำนวณภาษี</h1>
     <p>ส่วนหนึ่งของโครงงาน IS กรณีศึกษาเรื่องภาษี</p>
   </header>
-  <main id="site-content" aria-hidden="true">
- 
+  <main id="site-content">
     <!-- ส่วนที่ 1: บทคำนำ -->
     <section>
-      <h2>บทคำนำ</h2>
+      <h2 tabindex="-1">บทคำนำ</h2>
       <p>
         เว็บไซต์นี้จัดทำขึ้นเพื่อใช้ในการศึกษาและเป็นส่วนหนึ่งของโครงงาน IS กรณีศึกษาเรื่องภาษี
         โดยมีวัตถุประสงค์เพื่อให้ผู้ใช้งานสามารถคำนวณภาษีเบื้องต้นได้ด้วยตนเอง
@@ -210,7 +177,7 @@
       </div>
     </section>
   </main>
-  <script src="preentry/script.js"></script>
+  <!-- ลบ <script src="preentry/script.js"></script> ออก -->
   <script>
     function calculateTax(event) {
       event.preventDefault();
